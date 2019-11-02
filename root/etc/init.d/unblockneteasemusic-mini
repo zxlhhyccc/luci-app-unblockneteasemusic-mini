@@ -28,7 +28,7 @@ EOF
 		/etc/init.d/dnsmasq restart >/dev/null 2>&1
 
 		if ! ipset list music >/dev/null; then ipset create music hash:ip; fi
-		curl -s "http://httpdns.n.netease.com/httpdns/v2/d?domain=music.163.com,interface.music.163.com,interface3.music.163.com,apm.music.163.com,apm3.music.163.com,clientlog.music.163.com,clientlog3.music.163.com" |grep -Eo '[0-9]+?\.[0-9]+?\.[0-9]+?\.[0-9]+?' |sort |uniq |awk '{print "ipset add music "$1}' |sh
+		wget -O- "http://httpdns.n.netease.com/httpdns/v2/d?domain=music.163.com,interface.music.163.com,interface3.music.163.com,apm.music.163.com,apm3.music.163.com,clientlog.music.163.com,clientlog3.music.163.com" |grep -Eo '[0-9]+?\.[0-9]+?\.[0-9]+?\.[0-9]+?' |sort |uniq |awk '{print "ipset add music "$1}' |sh
 		iptables -t nat -N unblock_netease_music
 		iptables -t nat -A unblock_netease_music -d 0.0.0.0/8 -j RETURN
 		iptables -t nat -A unblock_netease_music -d 10.0.0.0/8 -j RETURN
@@ -45,7 +45,7 @@ EOF
 		mkdir -p /var/etc
 		cat <<-EOF >> "/var/etc/unblockneteasemusic-mini.include"
 if ! ipset list music >/dev/null; then ipset create music hash:ip; fi
-curl -s "http://httpdns.n.netease.com/httpdns/v2/d?domain=music.163.com,interface.music.163.com,interface3.music.163.com,apm.music.163.com,apm3.music.163.com,clientlog.music.163.com,clientlog3.music.163.com" |grep -Eo '[0-9]+?\.[0-9]+?\.[0-9]+?\.[0-9]+?' |sort |uniq |awk '{print "ipset add music "$1}' |sh
+wget -O- "http://httpdns.n.netease.com/httpdns/v2/d?domain=music.163.com,interface.music.163.com,interface3.music.163.com,apm.music.163.com,apm3.music.163.com,clientlog.music.163.com,clientlog3.music.163.com" |grep -Eo '[0-9]+?\.[0-9]+?\.[0-9]+?\.[0-9]+?' |sort |uniq |awk '{print "ipset add music "$1}' |sh
 		iptables -t nat -N unblock_netease_music
 		iptables -t nat -A unblock_netease_music -d 0.0.0.0/8 -j RETURN
 		iptables -t nat -A unblock_netease_music -d 10.0.0.0/8 -j RETURN
