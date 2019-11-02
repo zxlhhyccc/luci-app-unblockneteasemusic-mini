@@ -5,7 +5,7 @@
 START=99
 STOP=10
 
-enable="$(uci get unblockneteasemusic.@unblockneteasemusic[0].enable)"
+enable="$(uci get unblockneteasemusic-mini.@unblockneteasemusic-mini[0].enable)"
 
 unblock_server_addr="server-sh.unblockneteasemusic.router.ctcgfw.generalcdn.top"
 unblock_server_ip="$(ping "server-sh.unblockneteasemusic.router.ctcgfw.generalcdn.top" -c 1 | sed '1{s/[^(]*(//;s/).*//;q}')"
