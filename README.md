@@ -1,6 +1,6 @@
 # PROJECT OPENWRT
 ## [OpenWrt] 解除网易云音乐播放限制 [Mini Ver]
-### Powered by [\[CTCGFW\]Project OpenWrt](https://github.com/project-openwrt) & [hyird](https://t.me/hyird) & [Sunsky](https://t.me/Sunsky3).
+### Powered by [\[CTCGFW\]Project OpenWrt](https://github.com/project-openwrt) & [hyird](https://t.me/hyird) & [Sunsky](https://t.me/Sunsky03).
 ### Welcome to our Telegram group: [@ctcgfw\_openwrt\_discuss](https://t.me/ctcgfw\_openwrt\_discuss).
 - - -
 # 使用说明
