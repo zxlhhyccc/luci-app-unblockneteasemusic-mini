@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-unblockneteasemusic-mini
 PKG_VERSION:=1.2
-PKG_RELEASE:=7
+PKG_RELEASE:=8
 LUCI_TITLE:=LuCI support for UnblockNeteaseMusic(-Go)
 LUCI_DEPENDS:=+busybox +dnsmasq-full +ipset +iptables +wget
 LUCI_PKGARCH:=all
